@@ -62,6 +62,7 @@ namespace Excercise_1
             {
                 sum = f(sum);
             }
+            OnCalculate?.Invoke(this, sum);
             return sum;
         }
     }

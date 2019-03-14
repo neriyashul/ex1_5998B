@@ -51,8 +51,10 @@ namespace Excercise_1
 
         public double Calculate(double value)
         {
-            OnCalculate(this, value);
-            return this.myMission(value);
+            double outcome = this.myMission(value);
+            OnCalculate?.Invoke(this, outcome);
+            return outcome;
+            
         }
     }
 }
