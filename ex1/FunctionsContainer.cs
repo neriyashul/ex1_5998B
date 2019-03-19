@@ -9,12 +9,17 @@ namespace Excercise_1 {
     {
 
         Dictionary<string, FuncIndexer> funcDict = new Dictionary<string, FuncIndexer>();
-        
 
+        /******************
+        * Indexer to the function.
+        * input:    string.
+        * output:   FuncIndexer.
+        ******************/
         public FuncIndexer this[string name]
         {
             get
             {
+                // if there is no such name -> create new function which do nothing.
                 if (!funcDict.ContainsKey(name))
                 {
                     funcDict[name] = val => val;
@@ -27,6 +32,11 @@ namespace Excercise_1 {
             }
         }
 
+        /******************
+        * the function return list with all the missions.
+        * input:    -
+        * output:   List<string>.
+        ******************/
         public List<string> getAllMissions()
         {
             return new List<string>(this.funcDict.Keys);
